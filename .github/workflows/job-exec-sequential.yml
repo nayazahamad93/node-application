@@ -12,13 +12,15 @@ jobs:
 
     job2:
         needs: job1
+        if: ${{always()}}
         runs-on: ubuntu-latest
         steps:
            - name: job2
              run: echo "job2 executed"
 
     job3:
-        needs: job2 # if i want to run job in sequentiallu then i can use needs keyword to run job3 after job2
+        needs: job2 # if i want to run job in sequentially then i can use "needs" keyword to run job3 after job2
+        if: ${{always()}} # if i want to run job3 even if job2 fails then i can use "if:{{always}}" function
         runs-on: ubuntu-latest
         steps:
            - name: job3
