@@ -26,6 +26,3 @@ jobs:
               run: |
                 echo "Environment: {{ inputs.environment }}"
                 echo "App Version: {{ inputs.version }}"
-
-
-  
