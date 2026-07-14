@@ -18,6 +18,8 @@ on:
                required: true
                default: '1.0.0'
 
+env:
+    TYPE_OF_APP: '1 Tire App'
 jobs:
     show-the-variables:
        runs-on: ubuntu-latest
@@ -26,3 +28,7 @@ jobs:
               run: |
                 echo "Environment: ${{ inputs.environment }}"
                 echo "App Version: ${{ inputs.version }}"
+
+            - name: display Environment Variables
+              run: |
+                echo "Environment: $TYPE_OF_APP"    
