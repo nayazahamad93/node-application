@@ -47,3 +47,14 @@ jobs:
             - name: Job2 Environment Variables
               run: |
                 echo "Environment: JOB2_ENV "
+
+    
+    job3:
+       runs-on: ubuntu-latest
+       env:
+           JOB2_ENV: 'Monolithic'
+       steps:
+            - name: Print Repo Secrete and Variables
+              run: |
+                echo "Github Repo Secrete: ${{secrets.SECRETE_KEY_DEVOPS_JUNE_2026}} " 
+                echo "Github Repo Variable: ${{vars.SOME_VARIABLE_DEVOPS_JUNE_2026}} "            
