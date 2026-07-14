@@ -41,8 +41,6 @@ jobs:
 
     job2:
        runs-on: ubuntu-latest
-       env:
-           JOB2_ENV: 'Monolithic'
        steps:
             - name: Job2 Environment Variables
               run: |
@@ -51,8 +49,6 @@ jobs:
     
     job3:
        runs-on: ubuntu-latest
-       env:
-           JOB2_ENV: 'Monolithic'
        steps:
             - name: Print Repo Secrete and Variables
               run: |
