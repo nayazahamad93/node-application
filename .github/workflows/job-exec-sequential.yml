@@ -11,14 +11,14 @@ jobs:
              run: echo "job1 executed"    
 
     job2:
-        needs : job2
+        needs: job1
         runs-on: ubuntu-latest
         steps:
            - name: job2
              run: echo "job2 executed"
 
     job3:
-        needs : job3 # if i want to run job in sequentiallu then i can use needs keyword to run job3 after job2
+        needs: job1 # if i want to run job in sequentiallu then i can use needs keyword to run job3 after job2
         runs-on: ubuntu-latest
         steps:
            - name: job3
