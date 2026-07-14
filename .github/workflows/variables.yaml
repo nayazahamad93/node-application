@@ -24,5 +24,5 @@ jobs:
        steps:
             - name: display Inputs
               run: |
-                echo "Environment: {{ inputs.environment }}"
-                echo "App Version: {{ inputs.version }}"
+                echo "Environment: ${{ inputs.environment }}"
+                echo "App Version: ${{ inputs.version }}"
