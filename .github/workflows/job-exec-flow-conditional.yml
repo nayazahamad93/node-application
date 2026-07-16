@@ -20,7 +20,6 @@ jobs:
              run: echo "job1 executed"    
 
     job2:
-        needs: job1
         if: ${{inputs.job_to_run == 'job2' || inputs.job_to_run == 'all'}}
         runs-on: ubuntu-latest
         steps:
