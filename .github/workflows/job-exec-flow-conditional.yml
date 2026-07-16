@@ -1,0 +1,35 @@
+name : sequential jobs
+
+on:
+    workflow_dispatch:
+          inputs:
+              job_to_run:
+                    description: "which job to run"
+                    required: true
+                    type: choice
+                    options: [job1, job2, job3,all]
+                         
+
+jobs:
+    job1:
+        if: ${{inputs.job_to_run == 'job1' || inputs.job_to_run == 'all'}} # if i want to run job1 or all jobs then i can use "if" condition
+        runs-on: ubuntu-latest
+    
+        steps:
+           - name: job1
+             run: echo "job1 executed"    
+
+    job2:
+        needs: job1
+        if: ${{inputs.job_to_run == 'job2' || inputs.job_to_run == 'all'}}
+        runs-on: ubuntu-latest
+        steps:
+           - name: job2
+             run: echo "job2 executed"
+
+    job3:
+        if: ${{inputs.job_to_run == 'job3' || inputs.job_to_run == 'all'}}
+        runs-on: ubuntu-latest
+        steps:
+           - name: job3
+             run: echo "job3 executed"

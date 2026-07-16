@@ -7,7 +7,7 @@ jobs:
     job1:
         runs-on: ubuntu-latest
 
-        strategy:
+        strategy: # to run the same job multiple times with different configurations, we can use matrix strategy
             matrix:
                 node-version: [18, 20, 22]
         steps:
