@@ -1,0 +1,15 @@
+name : job outputs
+
+on : workflow_dispatch
+
+jobs:
+    job1:
+        runs-on: ubuntu-latest
+        
+        steps:
+           - name: set a variable
+             id: step1
+             run: echo "msg=ITD from step1" >> $GITHUB_OUTPUT
+           
+           - name: get step1 variable
+             run: echo " The output from the step1${{steps.step1.outputs.msg}}"     
