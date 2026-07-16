@@ -1,4 +1,4 @@
-name : sequential jobs
+name : conditional jobs
 
 on:
     workflow_dispatch:
