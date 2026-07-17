@@ -12,7 +12,7 @@ jobs:
                 echo "This is test build!!" > build/info.txt
 
             - name: upload the build folder    
-              uses: action/upload-artifact@v7
+              uses: actions/upload-artifact@v7
               with:
                 name: build-output
                 path: build/
@@ -21,13 +21,13 @@ jobs:
         needs: job1
         runs-on: ubuntu-latest
         steps:
-            - name: download the build folder    
-              uses: action/download-artifact@v8
+            - name: download artifacts    
+              uses: actions/download-artifact@v8
               with:
                 name: build-output
                 path: ./build
               
-            - name: display the build folder
+            - name: display the contents of the build folder
               run: |
                ls -lart ./build
                cat ./build/info.txt
